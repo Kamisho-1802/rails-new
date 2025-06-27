@@ -23,6 +23,13 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <%= render 'header' %>
+
+   <div class="content">
+      <%= yield %> <!-- 各ビューの内容 -->
+    </div>
+
+    <%= render 'footer' %>
   </body>
 </html>

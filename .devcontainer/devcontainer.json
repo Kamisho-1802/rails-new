@@ -1,0 +1,14 @@
+{
+  "name": "Rails Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  },
+  "postCreateCommand": "bundle config set path 'vendor/bundle' --local && bundle install"
+
+}

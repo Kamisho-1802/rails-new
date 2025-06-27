@@ -5,6 +5,8 @@
     <p>苗字: <%= user.family_name %></p>
   </div>
 
+  <%= link_to "詳細ページ", user_path(user.id) %>
+
   <hr> <!-- 水平線で区切る -->
 <% end %>
 

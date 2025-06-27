@@ -1,6 +1,16 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  if ENV["CODESPACES"] == "true"
+    # 以下は codespace のドメインを hosts に加えています。
+    codespaces_port_forwarding_domain = ENV["GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"]
+    codespace_name = ENV["CODESPACE_NAME"]
+    host = "#{codespace_name}-3000.#{codespaces_port_forwarding_domain}"
+
+    config.hosts << host
+  end
+
+  config.action_controller.forgery_protection_origin_check = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Make code changes take effect immediately without server restart.
